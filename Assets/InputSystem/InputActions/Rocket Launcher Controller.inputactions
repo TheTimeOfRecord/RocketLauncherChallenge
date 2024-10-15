@@ -6,7 +6,7 @@
             "id": "2f82286a-477f-45ae-90c3-89cd19b07e72",
             "actions": [
                 {
-                    "name": "Fire",
+                    "name": "Boost",
                     "type": "Value",
                     "id": "a1f9eeca-2141-4e8b-8d65-c4c5ca286335",
                     "expectedControlType": "",
@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Rotate",
+                    "name": "Move",
                     "type": "Value",
                     "id": "22eccf0f-8655-4839-884f-f99c46140ac3",
                     "expectedControlType": "Axis",
@@ -32,7 +32,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Fire",
+                    "action": "Boost",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -43,7 +43,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotate",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -54,7 +54,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Rotate",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -65,7 +65,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Rotate",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
