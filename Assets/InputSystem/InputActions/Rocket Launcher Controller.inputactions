@@ -7,9 +7,9 @@
             "actions": [
                 {
                     "name": "Boost",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "a1f9eeca-2141-4e8b-8d65-c4c5ca286335",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true

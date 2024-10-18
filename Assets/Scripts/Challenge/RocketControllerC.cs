@@ -14,7 +14,7 @@ public class RocketControllerC : MonoBehaviour
     private bool _isMoving;
     private float _movementDirection;
     private bool isTabed = false;
-    private float doubleTabIntervalTime = 0f;
+    private float doubleTabTimeInterval = 0f;
 
     private readonly float ENERGY_TURN = 0.5f;
     private readonly float ENERGY_BURST = 2f;
@@ -27,7 +27,7 @@ public class RocketControllerC : MonoBehaviour
 
     private void Update()
     {
-        ApplyDoubleTabIntervalTime();
+        ApplyDoubleTabTimeInterval();
     }
 
     private void FixedUpdate()
@@ -43,7 +43,7 @@ public class RocketControllerC : MonoBehaviour
     // private void OnMove...
     private void OnMove(InputValue value)
     {
-        float rotaionDirection = value.Get<float>();
+        float rotaionDirection = value.Get<float>() > 0 ? 1 : -1;
         OnMoveEvent?.Invoke(rotaionDirection);
     }
 
@@ -52,23 +52,27 @@ public class RocketControllerC : MonoBehaviour
     // private void OnBoost...
     private void OnBoost(InputValue value)
     {
+        doubleTabTimeInterval = 0f;
+        Debug.Log("OnBoost");
         if (isTabed)
         {
+            Debug.Log("OnBoost1");
             OnBoostEvent?.Invoke(true);
             isTabed = false;
         }
         else
         {
+            Debug.Log("OnBoost2");
             isTabed = true;
         }
     }
-    private void ApplyDoubleTabIntervalTime()
+    private void ApplyDoubleTabTimeInterval()
     {
-        doubleTabIntervalTime += Time.deltaTime * 0.2f;
-        if (doubleTabIntervalTime > 0.2f)
+        doubleTabTimeInterval += Time.deltaTime * 0.2f;
+        if (doubleTabTimeInterval > 0.2f)
         {
             isTabed = false;
-            doubleTabIntervalTime = 0f;
+            doubleTabTimeInterval = 0f;
         }
     }
 
